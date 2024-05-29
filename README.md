@@ -8,4 +8,4 @@ This project is a simple Point-of-Sale System for MSYS 42 (Business Applications
 4. Install Django by running pip install Django in your IDE terminal. (pip commands may differ based on your machine, e.g. pip3)
 5. Navigate to manage.py by running cd m3_act1
 6. Run the system through the command python manage.py runserver
-7. The system supports CRUD (Create, Read, Update, Delete) for managing inventory items. You may add, view, update, and delete items in the system, and these will reflect in the database. You may also add items with SQL commands (e.g. use posdb; insert into posapp_item (item_name, item_price) values ('insulin', 400.00);)
+7. The system supports CRUD (Create, Read, Update, Delete) for managing inventory items. You may add, view, update, and delete items in the system, and these will reflect in the database. You may also add items using SQL commands (e.g. use posdb; insert into posapp_item (item_name, item_price) values ('insulin', 400.00);)
