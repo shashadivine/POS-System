@@ -1,0 +1,68 @@
+{% load static %}
+<!doctype html>
+<html lang="en">  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>POS DB</title>
+
+
+  
+    <!-- Bootstrap core CSS -->
+    <link href="{% static '/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static '/posapp/base.css' %}">
+    <script src="{% static '/bootstrap/jquery-3.4.1.slim.min.js' %}"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+
+      .lineamount {
+        width: 30%
+      }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static '/openpos/form-validation.css' %}" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">POSDB</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'openpos' %}">Order Page <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'item_display' %}">Item Display</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'add_items' %}">Add Items</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+  </body>
+</html>

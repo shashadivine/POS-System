@@ -1,0 +1,174 @@
+{% extends 'posapp/base.html' %}
+{% load static %}
+
+{% block content %} 
+<body>
+  <style>
+
+    .card{
+        z-index: 5;
+        background-color: #D9D9D9;
+        width:800px;
+        padding: 60px 40px 30px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .card-title{
+        text-decoration:solid;
+    }
+
+    .form{
+        display: flex;
+        flex-direction: row;
+        align-items: stretch; 
+        width: 100%;
+    }
+
+
+    .form-control{
+        border: none;
+        border-radius: 10px;
+        margin-top: -3px;
+    }
+    
+
+    .form-select{
+        border: none;
+        border-radius: 5px;
+        padding: 6px 15px 6px;
+        margin-left: 12px;
+        width: auto;
+    }
+
+    .item-format {
+        display: flex;
+        margin-top: 0px;
+        flex-direction: column;  /* Aligns children (label and select) in a column */
+        align-items: center;  /* Aligns items to the start of the flex container */
+        width: 100%;  /* Takes full width to fit within its parent container */
+    }
+
+    .btn-primary {
+        color: white;
+        background-color:#008CC6;
+        border: none;
+    }
+
+
+    .contained {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box; /* Ensure padding is included in height calculation */
+    }
+    .btn-custom {
+        width: 400px;
+        height: 52px;
+        font-size: 1.2em;
+        margin: 10px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 15px;
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: center;
+        color:white;
+    }
+
+    .btn-light{
+      color: white;
+      background-color: #464646;
+      border: none;
+    }
+
+    .new-btn{
+      align-self: flex-end;
+      margin-top: -36px;
+      margin-right: 70px;
+
+    }
+
+    .current {
+        background-color: #ef216c;
+    }
+    .others {
+        background-color: #008CC6;
+    }
+
+    /* The whole card/form */
+    .space{
+      padding-top: 15px;
+    }
+
+
+    .form-label {
+      margin-bottom: 10px;
+      margin-right: 580px;
+    }
+
+    .form-label-quantity {
+      margin-bottom: 10px;
+      margin-right: 595px;
+    }
+
+
+
+    p {
+        font-family: 'Oswald', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 44px;
+        letter-spacing: 0em;
+        text-align: center;
+    }
+
+  </style>
+
+<p>UPDATE ITEM</p>
+<div class="space"></div>
+      <div class="container">
+        <div class="card mx-auto pt-2 ">
+            <div class="card-body">
+                <form method="POST" action="{% url 'add_items' %}">
+                    {% csrf_token %}
+                    <form class="form">
+                        <!-- ITEM NAME -->
+                        <div class="mb-2 item-format">
+                            <label for="item-name" class="form-label">Item Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="item-name" name="item-name" placeholder="Current Item Name" required>
+                        </div>
+                        <!-- ITEM PRICE -->
+                        <div class="mb-2 item-format">
+                            <div class="space"></div>
+                            <label for="item-price" class="form-label">Item Price<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="item-price" name="item-price" placeholder="Current Price" required>
+                        </div>
+                        <!-- QTY -->
+                        <div class="mb-2 item-format">
+                            <div class="space"></div>
+                            <label for="quantity" class="form-label-quantity">Quantity<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Current Quantity" required>
+                        </div>
+                    </form>
+
+                    <!-- SAVE BUTTON -->
+                    <div style="text-align: right;">
+                        <button type="submit" class="btn btn-primary justify-content-right mt-4">SUBMIT</button>
+                    </div>
+
+                </div>
+            </div>   
+            </div>
+            </div>
+        </div>
+</body>
+
+
+{% endblock %}
